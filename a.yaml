@@ -1,0 +1,24 @@
+services:
+    demo:
+    tms:
+
+layers:
+  - name:            ginaBdl
+    title:           GINA BDL
+    sources:         [gina_bdl_cache]
+
+caches:
+    gina_bdl_cache:
+        grids:       [global_mercator]
+        sources:     [gina_bdl]
+
+sources:
+    gina_bdl:
+        type:        tile
+        url:         http://ecn.t3.tiles.virtualearth.net/tiles/a%(quadkey)s.jpeg?g=2868
+        grid:        global_mercator
+
+grids:
+    global_mercator:
+        base:        GLOBAL_WEBMERCATOR
+        num_levels:  24
